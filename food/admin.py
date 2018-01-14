@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Food
+from .models import Category, Food, FoodImage
 
 # Register your models here.
 
@@ -17,3 +17,9 @@ class FoodAdmin(admin.ModelAdmin):
    prepopulated_fields = {'slug': ('name',)}
 
 admin.site.register(Food, FoodAdmin)
+
+
+class FoodImageAdmin(admin.ModelAdmin):
+   list_display = ['name']
+
+admin.site.register(FoodImage, FoodImageAdmin)
