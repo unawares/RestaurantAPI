@@ -19,7 +19,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path(r'food/', include('food.urls')),
+    path(r'api/', include([
+        path(r'food/', include('food.urls')),
+    ])),
     path(r'admin/', admin.site.urls),
 ]
 
